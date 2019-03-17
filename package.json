@@ -1,0 +1,34 @@
+{
+  "name": "rol-usage",
+  "version": "0.0.1",
+  "description": "usage example of react on lambda",
+  "sideEffects": false,
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack -p"
+  },
+  "author": "sultan99",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-runtime": "^6.26.0",
+    "dynamic-cdn-webpack-plugin": "^4.0.0",
+    "eslint": "^5.15.1",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-better-styled-components": "^1.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "module-to-cdn": "^3.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
