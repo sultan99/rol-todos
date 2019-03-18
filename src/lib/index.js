@@ -1,60 +1,56 @@
 import React from 'react'
 import tags from './tags'
 
-export const extractChilds = (nodes = []) => {
-  const children = nodes
-    .filter(node => !!node)
-    .map(node =>
-      typeof node === `function` ? node() : node
-    )
-  return children.length === 1 ? children[0] : children
-}
-
-const createReactElement = (tagName, props, children) => (
-  children && children.length
-    ? React.createElement(tagName, props, extractChilds(children))
-    : React.createElement(tagName, props)
+export const fnToNode = args => (
+  args && args.map(arg =>
+    typeof arg === `function` ? arg() : arg
+  )
 )
 
-const createElement = tagName => (props, ...children) => {
+const createElement = tagName => (...args) => {
+  const [props, ...children] = args
+  const isObject = props !== null && typeof props === `object`
   const isArray = Array.isArray(props)
-  const isNode = props && props.$$typeof
-  const isProps = props && !isNode && !isArray && typeof props === `object`
+  const isFunction = typeof props === `function`
+  const isNode = isObject && props.$$typeof
+  const isString = typeof props === `string`
+  const isProps = isObject && !isNode && !isArray
 
+  if (!args.length) {
+    return React.createElement(tagName)
+  }
   if (isProps && !children.length) {
-    return (...childs) => createReactElement(
-      tagName, props, extractChilds(childs)
+    return (...childs) => React.createElement(
+      tagName, ...fnToNode([props, ...childs])
     )
   }
-  if (!isProps && children.length) {
-    return createReactElement(
-      tagName, {children: extractChilds([props, ...children])}
-    )
-  }
-  if (isNode || typeof props === `string`) {
+  if (isNode || isFunction || isString) {
     return React.createElement(
-      tagName, null, props
-    )
-  }
-  if (typeof props === `function`) {
-    return React.createElement(
-      tagName, null, props()
+      tagName, null, ...fnToNode(args)
     )
   }
   if (isArray) {
     return React.createElement(
-      tagName, null, extractChilds(props)
+      tagName, null, fnToNode(props)
     )
   }
-  if (!props && !children.length) {
-    return React.createElement(tagName)
-  }
-  return createReactElement(
-    tagName, props, children
+
+  return React.createElement(
+    tagName, ...fnToNode(args)
   )
 }
 
 const lambda = comp => createElement(comp)
+
+lambda.fragment = (...nodes) => (
+  React.createElement(React.Fragment, null, nodes)
+)
+
+lambda.compose = (...fns) => arg => (
+  fns.reverse().reduce(
+    (acc, fn) => fn(acc), arg
+  )
+)
 
 tags.forEach(tag =>
   lambda[tag] = createElement(tag)
