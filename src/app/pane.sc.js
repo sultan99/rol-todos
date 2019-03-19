@@ -1,9 +1,8 @@
 import λ from 'react-on-lambda'
-import styled from 'styled-components'
 
-const pane = styled.div`
+const pane = λ.div`
   margin: auto;
   max-width: 550px;
 `
 
-export default λ(pane)
+export default pane

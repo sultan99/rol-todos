@@ -1,9 +1,8 @@
 import λ from 'react-on-lambda'
-import styled from 'styled-components'
 import checkMark from './check-mark.sc'
 import span from './span.sc'
 
-const input = styled.input`
+const input = λ.input`
   display: none;
 
   &:checked ~ ${checkMark().type} {
@@ -23,4 +22,4 @@ const input = styled.input`
   }
 `
 
-export default λ(input)
+export default input

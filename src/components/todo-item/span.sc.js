@@ -1,7 +1,6 @@
 import λ from 'react-on-lambda'
-import styled from 'styled-components'
 
-const span = styled.span`
+const span = λ.span`
   color: #555555;
   font-size: 18px;
   padding-left: 10px;
@@ -12,4 +11,4 @@ const span = styled.span`
   }
 `
 
-export default λ(span)
+export default span

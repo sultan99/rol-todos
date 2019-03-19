@@ -1,7 +1,6 @@
 import λ from 'react-on-lambda'
-import styled from 'styled-components'
 
-const input = styled.input`
+const input = λ.input`
   background-color: #fff;
   border-radius: 4px;
   border: 1px solid #ced4da;
@@ -10,7 +9,7 @@ const input = styled.input`
   font-size: 20px;
   font-weight: 400;
   padding: 10px 20px;
-  transition: border-color .15s
+  transition: border-color .15s;
   width: 100%;
 
   &::placeholder {
@@ -24,4 +23,4 @@ const input = styled.input`
   }
 `
 
-export default λ(input)
+export default input

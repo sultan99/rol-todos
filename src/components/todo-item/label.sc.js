@@ -1,11 +1,10 @@
 import λ from 'react-on-lambda'
-import styled from 'styled-components'
 
-const label = styled.label`
+const label = λ.label`
   cursor: pointer;
   display: block;
   padding: 12px 0;
   user-select: none;
 `
 
-export default λ(label)
+export default label

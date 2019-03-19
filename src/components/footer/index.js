@@ -1,7 +1,6 @@
 import λ from 'react-on-lambda'
-import styled from 'styled-components'
 
-const footer = styled.div`
+const footer = λ.div`
   box-shadow:
     0 1px 1px rgba(0, 0, 0, 0),
     0 8px 0 -3px #fcfcfc, 0 9px 1px -3px rgba(0, 0, 0, 0.2),
@@ -10,4 +9,4 @@ const footer = styled.div`
   margin-top: -13px;
 `
 
-export default λ(footer)
+export default footer

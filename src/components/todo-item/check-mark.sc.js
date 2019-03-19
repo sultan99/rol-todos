@@ -1,7 +1,6 @@
 import λ from 'react-on-lambda'
-import styled from 'styled-components'
 
-const checkMark = styled.span`
+const checkMark = λ.span`
   background-color: white;
   border: 1px solid #ced4da;
   border-radius: 50%;
@@ -27,4 +26,4 @@ const checkMark = styled.span`
   }
 `
 
-export default λ(checkMark)
+export default checkMark

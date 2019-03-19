@@ -45,8 +45,8 @@ class App extends React.Component {
     )
     this.setState({todos})
   }
-  render = () => (
-    pane(
+  render() {
+    return pane(
       title(`todos`),
       input({
         placeholder: `What needs to be done?`,
@@ -65,7 +65,7 @@ class App extends React.Component {
       ),
       footer
     )
-  )
+  }
 }
 
 export default λ(App)
