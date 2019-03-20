@@ -43,8 +43,8 @@ class App extends React.Component {
     )
     this.setState({todos})
   }
-  render() {
-    return wrapper(
+  render = () => (
+    wrapper(
       title(`todos`),
       input({
         placeholder: `What needs to be done?`,
@@ -56,7 +56,7 @@ class App extends React.Component {
         this.removeTodo
       )
     )
-  }
+  )
 }
 
 export default λ(App)
