@@ -1,6 +1,6 @@
 const moduleToCdn = require(`module-to-cdn`)
 
-const resovers = (name, version) => {
+const resolve = (name, version) => {
   const list = {
     'styled-components': {
       name: `styled-components`,
@@ -20,5 +20,5 @@ const resovers = (name, version) => {
 
 module.exports = (name, version, opts) => (
   moduleToCdn(name, version, opts) ||
-  resovers(name, version)
+  resolve(name, version)
 )

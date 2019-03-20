@@ -20,7 +20,7 @@ $ npm i
 $ npm start
 ```
 <br/>
-🧙 One magic link to get involved: [http://localhost:8080/](http://localhost:8080/)
+🧙 One magic link to get involved: [http://localhost:8080](http://localhost:8080/)
 <br/>
 <br/>
 
@@ -30,9 +30,12 @@ You can check the bundle size of application by running:
 $ npm run build
 ```
 <br/>
-Check 📁dist folder and find 2 tiny files (~50kb).
+Check dist folder and find 2 tiny files (~27kb).
 
 <br/>
 <br/>
---------
-Made in [atom](https://atom.io/) with 🧡 for 🤖👾👽 and other good guys.
+<br/>
+<br/>
+<br/>
+
+Made in [atom](https://atom.io) with 🧡 for 🤖👾👽 and other good guys.
