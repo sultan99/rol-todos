@@ -3,7 +3,7 @@ import λ from 'react-on-lambda'
 const input = λ.input`
   background-color: #fff;
   border-radius: 4px;
-  border: 1px solid #ced4da;
+  border: 1px solid #E1E1E1;
   box-sizing: border-box;
   color: #495057;
   font-size: 20px;
@@ -18,7 +18,7 @@ const input = λ.input`
 
   &:focus {
     border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.1);
     outline: 0;
   }
 `

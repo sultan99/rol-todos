@@ -30,7 +30,7 @@ You can check the bundle size of application by running:
 $ npm run build
 ```
 <br/>
-Check dist folder and find 2 tiny files (~27kb).
+Check dist folder and find 2 tiny files (~8kb).
 
 <br/>
 <br/>

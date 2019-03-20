@@ -6,7 +6,6 @@ const path = require(`path`)
 const rootPath = dir => path.resolve(__dirname, dir)
 
 module.exports = {
-  devtool: `cheap-eval-source-map`,
   module: {
     rules: [
       {
@@ -26,8 +25,7 @@ module.exports = {
     new DynamicCdnWebpackPlugin({
       env: `production`,
       verbose: true,
-      resolver: cdnResolver,
-      exclude: [`components`, `react-on-lambda`]
+      resolver: cdnResolver
     }),
   ]
 }

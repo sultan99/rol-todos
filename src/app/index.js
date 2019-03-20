@@ -1,11 +1,9 @@
 import λ from 'react-on-lambda'
 import React from 'react'
-import footer from 'components/footer'
 import input from 'components/input'
-import pane from './pane.sc'
 import title from 'components/title'
-import todoItem from 'components/todo-item'
 import todoList from 'components/todo-list'
+import wrapper from './wrapper.sc'
 
 class App extends React.Component {
   constructor(props) {
@@ -46,24 +44,17 @@ class App extends React.Component {
     this.setState({todos})
   }
   render() {
-    return pane(
+    return wrapper(
       title(`todos`),
       input({
         placeholder: `What needs to be done?`,
         onKeyPress: this.addTodo
       }),
       todoList(
-        this.state.todos.map(item =>
-          todoItem({
-            key: item.key,
-            checked: item.done,
-            text: item.text,
-            onChange: this.toogle(item.key),
-            onRemove: this.removeTodo(item.key),
-          })
-        )
-      ),
-      footer
+        this.state.todos,
+        this.toogle,
+        this.removeTodo
+      )
     )
   }
 }

@@ -1,7 +1,7 @@
-import App from './app'
+import app from './app'
 import {render} from 'react-dom'
 
 render(
-  App(),
+  app(),
   document.getElementById(`app`)
 )

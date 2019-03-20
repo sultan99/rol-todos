@@ -1,10 +1,18 @@
-import λ from 'react-on-lambda'
+import todoItem from 'components/todo-item'
+import wrapper from './wrapper.sc'
 
-const list = λ.div`
-  background-color: white;
-  border: 1px solid #e2e2e2;
-  margin-top: 25px;
-  padding: 24px;
-`
+const todoList = (data, toogle, remove) => !!data.length && (
+  wrapper(
+    data.map(item =>
+      todoItem({
+        key: item.key,
+        checked: item.done,
+        text: item.text,
+        onChange: toogle(item.key),
+        onClick: remove(item.key)
+      })
+    )
+  )
+)
 
-export default list
+export default todoList

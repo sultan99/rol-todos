@@ -1,8 +1,8 @@
 import λ from 'react-on-lambda'
 
-const pane = λ.div`
+const wrapper = λ.div`
   margin: auto;
   max-width: 550px;
 `
 
-export default pane
+export default wrapper
