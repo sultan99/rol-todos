@@ -1,3 +1,4 @@
+import * as R from 'ramda'
 import λ from 'react-on-lambda'
 import React from 'react'
 import input from 'components/input'
@@ -8,53 +9,54 @@ import wrapper from './wrapper.sc'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      todos: [
-        {key: 1, done: true, text: `Buy milk`},
-        {key: 2, done: false, text: `Clean room`},
-        {key: 3, done: false, text: `Find job...`},
-      ]
-    }
+    const todos = [
+      {key: 1, done: true, text: `Buy milk`},
+      {key: 2, done: false, text: `Clean room`},
+      {key: 3, done: false, text: `Find job...`},
+    ]
+    this.state = {todos}
   }
   toogle = id => () => {
-    const todos = this.state.todos.map(todo =>
-      todo.key === id
-        ? {...todo, done: !todo.done}
-        : todo
+    const index = R.findIndex(
+      R.propEq(`key`, id),
+      this.state.todos
+    )
+    const todos = R.over(
+      R.lensPath([index, `done`]),
+      R.not,
+      this.state.todos
     )
     this.setState({todos})
   }
-  addTodo = event => {
-    const text = event.target.value
-    if (event.key !== `Enter` || !text) return
+  addTodo = ({key, target}) => {
+    if (key !== `Enter` || !target.value) return
     const newTodo = {
       key: Math.random(),
       checked: false,
-      text
+      text: target.value
     }
-    const todos = [...this.state.todos, newTodo]
-    event.target.value = ``
+    const todos = R.append(newTodo, this.state.todos)
     this.setState({todos})
+    target.value = ``
   }
   removeTodo = id => event => {
     event.preventDefault()
-    const todos = this.state.todos.filter(todo =>
-      todo.key !== id
+    const todos = R.filter(
+      todo => todo.key !== id,
+      this.state.todos
     )
     this.setState({todos})
   }
-  render = () => (
-    wrapper(
-      title(`todos`),
-      input({
-        placeholder: `What needs to be done?`,
-        onKeyPress: this.addTodo
-      }),
-      todoList(
-        this.state.todos,
-        this.toogle,
-        this.removeTodo
-      )
+  render = () => wrapper(
+    title(`todos`),
+    input({
+      placeholder: `What needs to be done?`,
+      onKeyPress: this.addTodo
+    }),
+    todoList(
+      this.state.todos,
+      this.toogle,
+      this.removeTodo
     )
   )
 }
