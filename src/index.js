@@ -1,3 +1,4 @@
+import 'styled-components'
 import app from './app'
 import {render} from 'react-dom'
 

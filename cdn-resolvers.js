@@ -2,6 +2,12 @@ const moduleToCdn = require(`module-to-cdn`)
 
 const resolve = (name, version) => {
   const list = {
+    'ramda': {
+      name: `ramda`,
+      var: `R`,
+      url: `https://unpkg.com/ramda@${version}/dist/ramda.min.js`,
+      version
+    },
     'react-on-lambda': {
       name: `react-on-lambda`,
       var: `λ`,
