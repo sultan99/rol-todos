@@ -18,12 +18,20 @@ module.exports = {
   },
   resolve: {
     alias: {
+      'actions': rootPath(`src/redux/actions`),
       'components': rootPath(`src/components`),
     }
   },
   plugins: [
-    new HtmlWebPackPlugin({template: rootPath(`src/index.html`)}),
-    new DynamicCdnWebpackPlugin({env: `production`, resolver: cdnResolvers}),
-    new CopyPlugin([{from: rootPath(`./public`), to: `./assets`}]),
+    new HtmlWebPackPlugin({
+      template: rootPath(`src/index.html`)
+    }),
+    new DynamicCdnWebpackPlugin({
+      env: `production`,
+      resolver: cdnResolvers
+    }),
+    new CopyPlugin([{
+      from: rootPath(`./public`), to: `./assets`
+    }]),
   ]
 }

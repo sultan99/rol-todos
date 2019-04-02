@@ -1,18 +1,11 @@
-import todoItem from 'components/todo-item'
+import λ from 'react-on-lambda'
+import todoItem from 'components/todo-item/with-state'
 import wrapper from './wrapper.sc'
 
-const todoList = (data, toogle, remove) => !!data.length && (
-  wrapper(
-    data.map(item =>
-      todoItem({
-        key: item.key,
-        checked: item.done,
-        text: item.text,
-        onChange: toogle(item.key),
-        onClick: remove(item.key)
-      })
-    )
-  )
+const todoList = λ.compose(
+  wrapper,
+  todos => todos.map(todoItem),
+  props => props.todos
 )
 
 export default todoList

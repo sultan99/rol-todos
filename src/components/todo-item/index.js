@@ -4,12 +4,16 @@ import input from './input.sc'
 import label from './label.sc'
 import span from './span.sc'
 
-const todoItem = ({key, checked, text, onChange, onClick}) => (
-  label({key},
-    input({type: `checkbox`, checked, onChange}),
+const todoItem = ({id, done, text, toggleTodo, removeTodo}) => (
+  label({key: id},
+    input({
+      type: `checkbox`,
+      checked: done,
+      onChange: () => toggleTodo(id)
+    }),
     checkMark(),
     span(text),
-    icoDelete({onClick}, `💀`)
+    icoDelete({onClick: () => removeTodo(id)}, `💀`)
   )
 )
 

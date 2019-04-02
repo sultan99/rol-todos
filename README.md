@@ -1,5 +1,6 @@
 ## Todos
 It is sample project of [react on lambda](https://github.com/sultan99/react-on-lambda) usage.
+Redux version.
 <br/>
 <br/>
 
@@ -11,12 +12,13 @@ Don't warry be magic 🧙‍
 ```sh
 $ git clone git@github.com:sultan99/rol-usage.git
 $ cd rol-usage
-$ npm i
+$ git checkout redux
 ```
 <br/>
-🧙‍ Two magic words to start:
+🧙‍ Two magic commands to start:
 
 ```sh
+$ npm i
 $ npm start
 ```
 <br/>
@@ -30,7 +32,7 @@ You can check the bundle size of application by running:
 $ npm run build
 ```
 <br/>
-Check dist folder and find 2 tiny files (~8kb).
+Check dist folder and find 2 tiny files (~7.4kb) and assets folder.
 
 <br/>
 <br/>

@@ -2,7 +2,7 @@ import λ from 'react-on-lambda'
 import checkMark from './check-mark.sc'
 import span from './span.sc'
 
-const input = λ.input`
+const checkbox = λ.input`
   display: none;
 
   &:checked ~ ${checkMark().type} {
@@ -22,4 +22,4 @@ const input = λ.input`
   }
 `
 
-export default input
+export default checkbox

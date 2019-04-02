@@ -19,6 +19,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-on-lambda": "latest",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
