@@ -4,9 +4,7 @@ import app from 'components/app/with-state'
 import dom from 'react-dom'
 import store from './redux/store'
 
-const provider = λ(Provider)
-
 dom.render(
-  provider({store}, app()),
+  λ(Provider, {store}, app()),
   document.getElementById(`app`)
 )
