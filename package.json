@@ -1,0 +1,43 @@
+{
+  "name": "rol-usage",
+  "version": "0.1.0",
+  "description": "usage example of react on lambda",
+  "sideEffects": false,
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack -p",
+    "prebuild": "rimraf dist"
+  },
+  "author": "sultan99",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sultan99/rol-usage"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-on-lambda": "latest",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-runtime": "^6.26.0",
+    "copy-webpack-plugin": "^5.0.2",
+    "dynamic-cdn-webpack-plugin": "^4.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-better-styled-components": "^1.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "module-to-cdn": "^3.1.2",
+    "rimraf": "^2.6.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
