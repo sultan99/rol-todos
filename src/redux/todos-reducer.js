@@ -9,12 +9,11 @@ const initialState = {
   ]
 }
 
-const findIndex = (id, list) => ρ.findIndex(
-  ρ.propEq(`id`, id),
-  list
-)
-
 const todosReducer = (state = initialState, action) => {
+  const findIndex = () => ρ.findIndex(
+    ρ.propEq(`id`, action.id),
+    state.todos
+  )
   switch (action.type) {
     case ADD_TODO: {
       const newTodo = {
@@ -28,12 +27,12 @@ const todosReducer = (state = initialState, action) => {
       return {todos}
     }
     case REMOVE_TODO: {
-      const index = findIndex(action.id, state.todos)
+      const index = findIndex()
       const todos = ρ.remove(index, 1, state.todos)
       return {todos}
     }
     case TOGGLE_TODO: {
-      const index = findIndex(action.id, state.todos)
+      const index = findIndex()
       const setState = ρ.over(
         ρ.lensPath([`todos`, index, `done`]),
         ρ.not

@@ -4,7 +4,7 @@ import wrapper from './wrapper.sc'
 
 const todoList = λ.compose(
   wrapper,
-  todos => todos.map(todoItem),
+  λ.mapKey(todoItem),
   props => props.todos
 )
 

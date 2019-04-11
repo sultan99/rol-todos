@@ -5,6 +5,6 @@ import dom from 'react-dom'
 import store from './redux/store'
 
 dom.render(
-  λ(Provider, {store}, app()),
+  λ(Provider, {store}, app),
   document.getElementById(`app`)
 )
