@@ -4,6 +4,11 @@ import icoDelete from './ico-delete.sc'
 import label from './label.sc'
 import span from './span.sc'
 
+const handleClick = (id, removeTodo) => event => {
+  event.preventDefault()
+  removeTodo(id)
+}
+
 const todoItem = ({id, done, text, toggleTodo, removeTodo}) => (
   label(
     checkbox({
@@ -12,7 +17,7 @@ const todoItem = ({id, done, text, toggleTodo, removeTodo}) => (
     }),
     checkMark(),
     span(text),
-    icoDelete({onClick: () => removeTodo(id)}, `💀`)
+    icoDelete({onClick: handleClick(id, removeTodo)}, `💀`)
   )
 )
 

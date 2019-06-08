@@ -15,7 +15,7 @@ const app = props => (
   wrapper(
     title(`todos`),
     input({
-      placeholder: `What needs to be done?`,
+      placeholder: `What needs to be done? (hit enter)`,
       onKeyPress: addTodo(props)
     }),
     todoList

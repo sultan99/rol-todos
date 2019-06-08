@@ -1,11 +1,11 @@
 {
   "name": "rol-usage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "usage example of react on lambda",
   "sideEffects": false,
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack -p",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack -p",
     "prebuild": "rimraf dist"
   },
   "author": "sultan99",
@@ -21,25 +21,27 @@
     "react-on-lambda": "latest",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^8.0.6",
     "babel-runtime": "^6.26.0",
-    "copy-webpack-plugin": "^5.0.2",
+    "copy-webpack-plugin": "^5.0.3",
+    "cross-env": "^5.2.0",
     "dynamic-cdn-webpack-plugin": "^4.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-async-await": "0.0.0",
     "eslint-plugin-better-styled-components": "^1.1.1",
     "html-webpack-plugin": "^3.2.0",
-    "module-to-cdn": "^3.1.2",
+    "module-to-cdn": "^3.1.5",
     "rimraf": "^2.6.3",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack": "^4.33.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.7.0"
   }
 }
